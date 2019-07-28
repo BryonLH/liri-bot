@@ -14,27 +14,33 @@ var fs = require("fs");
 var command = process.argv[2];
 var term = process.argv.slice(3).join(" ");
 
-
-var spotifySong = function() {
-    spotify.search({ type: "track", query: term }, function (err, data) {
+// Search Spotify for a song by title and return results
+var spotifySong = function (track) {
+    spotify.search({ type: "track", query: track }, function (err, data) {
         if (err) {
             return console.log("Error occurred: " + err);
         }
-        console.log(data);
+        console.log(`
+Artist: ${data.tracks.items[0].artists[0].name}
+Song: ${track}
+Album: ${data.tracks.items[0].album.name}
+URL: ${data.tracks.items[0].preview_url}`);
     });
 }
 
+// Search OMDB for a movie by title an return results
 // var movieSearch = function() {
 
 // }
 
+// Do the "do what it says" function
+
+
 
 if (command === "spotify-this-song") {
-    // var songToSpotify = new 
-    spotifySong();
-    console.log("Command entered: " + command);
-    console.log("Song search: " + term);
+    spotifySong(term);
 } else if (command === "movie-this") {
+    movieSearch();
     console.log("Command entered: " + command);
     console.log("Movie search: " + term);
 } else if (command === "do-what-it-says") {
