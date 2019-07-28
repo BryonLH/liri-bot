@@ -31,9 +31,18 @@ URL: ${data.tracks.items[0].preview_url}`);
 // Search OMDB for a movie by title an return results
 var movieSearch = function () {
     axios
-        .get(`http://www.omdbapi.com/?apikey=trilogy&t=${term}`)
+        .get(`http://www.omdbapi.com/?apikey=753acd53&t=${term}`)
         .then(function (response) {
-            console.log(response);
+            console.log(`
+Title: ${response.data.Title}
+Release Year: ${response.data.Year}
+IMDB Rating: ${response.data.imdbRating}
+Rotten Tomatoes Rating: ${response.data.Ratings[1].Value}
+Country: ${response.data.Country}
+Language: ${response.data.Language}
+Plot: ${response.data.Plot}
+Cast: ${response.data.Actors}
+            `);
         })
 }
 
@@ -44,9 +53,12 @@ var movieSearch = function () {
 if (command === "spotify-this-song") {
     spotifySong(term);
 } else if (command === "movie-this") {
-    movieSearch();
-    console.log("Command entered: " + command);
-    console.log("Movie search: " + term);
+    if (command === null) {
+        var tempMovie = "Mr. Nobody";
+        movieSearch(tempMovie);
+    } else {
+        movieSearch();
+    }
 } else if (command === "do-what-it-says") {
     console.log("Command entered: " + command);
 }
