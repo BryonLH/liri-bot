@@ -29,9 +29,13 @@ URL: ${data.tracks.items[0].preview_url}`);
 }
 
 // Search OMDB for a movie by title an return results
-// var movieSearch = function() {
-
-// }
+var movieSearch = function () {
+    axios
+        .get(`http://www.omdbapi.com/?apikey=trilogy&t=${term}`)
+        .then(function (response) {
+            console.log(response);
+        })
+}
 
 // Do the "do what it says" function
 
