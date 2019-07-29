@@ -7,6 +7,7 @@ var dotenv = require("DotEnv");
 var Spotify = require("Node-Spotify-API");
 var spotify = new Spotify(keys.spotify);
 var fs = require("fs");
+var lineBreak = `\n<--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->\n`
 
 // Variables for what is entered into the Terminal
 var command = process.argv[2];
@@ -18,11 +19,14 @@ var spotifySong = function (track) {
         if (err) {
             return console.log("Error occurred: " + err);
         }
-        console.log(`
+        var responseString = `
 Artist: ${data.tracks.items[0].artists[0].name}
 Song: ${track}
 Album: ${data.tracks.items[0].album.name}
-URL: ${data.tracks.items[0].preview_url}`);
+URL: ${data.tracks.items[0].preview_url}`;
+        console.log(lineBreak);
+        console.log(responseString);
+        writeToFile(`${lineBreak}${command} ${term}\n ${responseString}`);
     });
 }
 
@@ -41,8 +45,9 @@ Language: ${response.data.Language}
 Plot: ${response.data.Plot}
 Cast: ${response.data.Actors}
             `;
+            console.log(lineBreak);
             console.log(responseString);
-            writeToFile(responseString);
+            writeToFile(`${lineBreak}${command} ${term}\n ${responseString}`);
         })
         .catch(function (error) {
             console.log(error);
