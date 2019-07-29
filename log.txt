@@ -1,0 +1,19 @@
+
+Title: Love Actually
+Release Year: 2003
+IMDB Rating: 7.6
+Rotten Tomatoes Rating: 63%
+Country: UK, USA, France
+Language: English, Portuguese, French
+Plot: Follows the lives of eight very different couples in dealing with their love lives in various loosely interrelated tales all set during a frantic month before Christmas in London, England.
+Cast: Bill Nighy, Gregor Fisher, Rory MacGregor, Colin Firth
+            
+Title: The Matrix
+Release Year: 1999
+IMDB Rating: 8.7
+Rotten Tomatoes Rating: 88%
+Country: USA
+Language: English
+Plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
+Cast: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
+            

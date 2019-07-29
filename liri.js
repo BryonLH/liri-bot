@@ -8,9 +8,7 @@ var Spotify = require("Node-Spotify-API");
 var spotify = new Spotify(keys.spotify);
 var fs = require("fs");
 
-
-// console.log(spotify);
-
+// Variables for what is entered into the Terminal
 var command = process.argv[2];
 var term = process.argv.slice(3).join(" ");
 
@@ -33,7 +31,7 @@ var movieSearch = function (term) {
     axios
         .get(`http://www.omdbapi.com/?apikey=753acd53&t=${term}`)
         .then(function (response) {
-            console.log(`
+            var responseString = `
 Title: ${response.data.Title}
 Release Year: ${response.data.Year}
 IMDB Rating: ${response.data.imdbRating}
@@ -42,7 +40,9 @@ Country: ${response.data.Country}
 Language: ${response.data.Language}
 Plot: ${response.data.Plot}
 Cast: ${response.data.Actors}
-            `);
+            `;
+            console.log(responseString);
+            writeToFile(responseString);
         })
         .catch(function (error) {
             console.log(error);
@@ -62,19 +62,24 @@ var doWhatItSays = function () {
     });
 }
 
+// This function will write the results and the command and search term entered
+var writeToFile = function (responseString) {
+    fs.appendFile("log.txt", responseString, function (err) {
+        if (err) return console.log(er);
+    })
+}
+
 var runProgram = function () {
     if (command === "spotify-this-song") {
         spotifySong(term);
     } else if (command === "movie-this") {
         if (term === "") {
-            // console.log("Mr. Nobody");
-            // var tempMovie = "Mr. Nobody";
             movieSearch("Mr. Nobody");
         } else {
             movieSearch(term);
         }
     } else if (command === "do-what-it-says") {
-        console.log("Command entered: " + command);
+        // console.log("Command entered: " + command);
         doWhatItSays();
     }
 }
