@@ -87,3 +87,22 @@ Language: English
 Plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
 Cast: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
             
+<--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
+spotify-this-song The Humpty Dance
+ 
+Artist: Digital Underground
+Song: The Humpty Dance
+Album: Sex Packets
+URL: https://p.scdn.co/mp3-preview/9743032731989129b3457db2c2b5c694e841888a?cid=255ab606a91d4790984cdaf557e9058c
+<--=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=->
+movie-this Shawshank Redemption
+ 
+Title: The Shawshank Redemption
+Release Year: 1994
+IMDB Rating: 9.3
+Rotten Tomatoes Rating: 91%
+Country: USA
+Language: English
+Plot: Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.
+Cast: Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler
+            
