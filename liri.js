@@ -29,7 +29,7 @@ URL: ${data.tracks.items[0].preview_url}`);
 }
 
 // Search OMDB for a movie by title an return results
-var movieSearch = function () {
+var movieSearch = function (term) {
     axios
         .get(`http://www.omdbapi.com/?apikey=753acd53&t=${term}`)
         .then(function (response) {
@@ -44,6 +44,9 @@ Plot: ${response.data.Plot}
 Cast: ${response.data.Actors}
             `);
         })
+        .catch(function (error) {
+            console.log(error);
+        });
 }
 
 // Do the "do what it says" function
@@ -53,11 +56,12 @@ Cast: ${response.data.Actors}
 if (command === "spotify-this-song") {
     spotifySong(term);
 } else if (command === "movie-this") {
-    if (command === null) {
-        var tempMovie = "Mr. Nobody";
-        movieSearch(tempMovie);
+    if (term === "") {
+        // console.log("Mr. Nobody");
+        // var tempMovie = "Mr. Nobody";
+        movieSearch("Mr. Nobody");
     } else {
-        movieSearch();
+        movieSearch(term);
     }
 } else if (command === "do-what-it-says") {
     console.log("Command entered: " + command);
