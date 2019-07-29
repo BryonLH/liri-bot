@@ -84,6 +84,10 @@ var runProgram = function () {
     } else if (command === "do-what-it-says") {
         // console.log("Command entered: " + command);
         doWhatItSays();
+    } else if (command === "Hi") {
+        console.log("Hi! I can't wait to help you find a movie or song!")
+    } else {
+        console.log("I'm sorry, I do not recognize that command")
     }
 }
 runProgram();
