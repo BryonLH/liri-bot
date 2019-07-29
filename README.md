@@ -9,7 +9,7 @@ Liri-bot takes in a command and a search term and returns either details about a
 You can enter the following commands to have results returned to you.
 * Search for a song
     * Type "node liri spotify-this-song (title of a song)" to find information about that song, like who sang it or which album it was released on
-    ![spotify-this-song](../assets/images/screenshots/liri-bot movie-this.jpg)
+    ![spotify-this-song](../assets/images/screenshots/liri-bot-movie-this.jpg)
 * Search for a movie
     * Type "node liri movie-this (title of a movie)" to find information about that movie, like the cast, ratings or year it was released
     * If you are unsure of a movie, you can type "node liri movie-this" and a great movie will be shown to you
