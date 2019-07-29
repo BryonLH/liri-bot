@@ -50,19 +50,32 @@ Cast: ${response.data.Actors}
 }
 
 // Do the "do what it says" function
-
-
-
-if (command === "spotify-this-song") {
-    spotifySong(term);
-} else if (command === "movie-this") {
-    if (term === "") {
-        // console.log("Mr. Nobody");
-        // var tempMovie = "Mr. Nobody";
-        movieSearch("Mr. Nobody");
-    } else {
-        movieSearch(term);
-    }
-} else if (command === "do-what-it-says") {
-    console.log("Command entered: " + command);
+var doWhatItSays = function () {
+    fs.readFile("./random.txt", "utf8", function (err, data) {
+        if (err) return console.log(err);
+        var tempArray = data.split(",");
+        command = tempArray[0];
+        term = tempArray[1];
+        // console.log(command);
+        // console.log(term);
+        runProgram();
+    });
 }
+
+var runProgram = function () {
+    if (command === "spotify-this-song") {
+        spotifySong(term);
+    } else if (command === "movie-this") {
+        if (term === "") {
+            // console.log("Mr. Nobody");
+            // var tempMovie = "Mr. Nobody";
+            movieSearch("Mr. Nobody");
+        } else {
+            movieSearch(term);
+        }
+    } else if (command === "do-what-it-says") {
+        console.log("Command entered: " + command);
+        doWhatItSays();
+    }
+}
+runProgram();
