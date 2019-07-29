@@ -15,7 +15,7 @@ You can enter the following commands to have results returned to you.
     * Type "node liri movie-this (title of a movie)" to find information about that movie, like the cast, ratings or year it was released
     * If you are unsure of a movie, you can type "node liri movie-this" and a great movie will be shown to you
     ![movie-this](./assets/images/screenshots/liri-bot-movie-this.jpg)
-    ![movie-this-gif](https://media.giphy.com/media/h2Nj3lP4WHxpjMfaXM/giphy.gif)
+    ![movie-this-gif](https://media.giphy.com/media/gJtHCewa2n8cIJZca2/giphy.gif)
 * Option 3
     * Type "node liri do-what-it-says" and it returns what has been entered into the file random.txt
 
